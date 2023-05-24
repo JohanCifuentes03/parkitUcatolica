@@ -1,0 +1,50 @@
+<div class="card border-primary mb-3 my-5">
+    <div class="card-header">Parqueaderos</div>
+    <div class="card-body text-primary">
+      <h5 class="card-title">Lista de parqueaderos</h5>
+  
+      <div class="my-2 text-left">
+        <button class="btn btn-rounded btn-primary" type="button" [routerLink]="['/owners/form']">Crear parqueadero</button>
+      </div>
+  
+      <div class="table-container">
+        <table class="table table-bordered table-striped">
+          <thead>
+            <tr>
+              <th>Id</th>
+              <th>Nombre</th>
+              <th>Direccion</th>
+              <th>Telefono</th>
+              <th>Email</th>
+              <th>Cupos</th>
+              <th>Id dueño</th>
+              <th>Id localidad</th>
+              <th>Precio min</th>
+
+            </tr>
+          </thead>
+
+
+          
+          <tbody>
+            <tr *ngFor="let parking of parkings">
+              <td>{{parking.codigo}}</td>
+              <td>{{parking.nombre}}</td>
+              <td>{{parking.direccion}}</td>
+              <td>{{parking.telefono}}</td>
+              <td>{{parking.correoElectronico}}</td>
+              <td>{{parking.cuposTotales}}</td>
+              <td>{{parking.idDueno}}</td>
+              <td>{{parking.idLocalidad}}</td>
+              <td>{{parking.precioMinuto}}</td>
+
+              <td>
+                <button type="button" name="button" [routerLink]="['/clients/form', parking.codigo]" class="btn btn-rounded btn-primary">editar</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  

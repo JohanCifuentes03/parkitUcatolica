@@ -1,0 +1,40 @@
+<div class="card border-primary mb-3 my-5">
+  <div class="card-header">Clientes</div>
+  <div class="card-body text-primary">
+    <h5 class="card-title">Lista de clientes</h5>
+
+    <div class="my-2 text-left">
+      <button class="btn btn-rounded btn-primary" type="button" [routerLink]="['/clients/form']">Crear Cliente</button>
+    </div>
+
+    <div class="table-container">
+      <table class="table table-bordered table-striped">
+        <thead>
+          <tr>
+            <th>id</th>
+            <th>nombre</th>
+            <th>apellido</th>
+            <th>email</th>
+            <th>direccion</th>
+            <th>telefono</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr *ngFor="let client of clients">
+            <td>{{client.codigo}}</td>
+            <td>{{client.nombre}}</td>
+            <td>{{client.apellido}}</td>
+            <td>{{client.correoElectronico}}</td>
+            <td>{{client.direccion}}</td>
+            <td>{{client.telefono}}</td>
+            <td>
+              <button type="button" name="button" [routerLink]="['/clients/form', client.codigo]" class="btn btn-rounded btn-primary">editar</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

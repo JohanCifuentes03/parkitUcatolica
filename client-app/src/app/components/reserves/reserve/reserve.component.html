@@ -1,0 +1,42 @@
+<div class="card border-primary mb-3 my-5">
+    <div class="card-header">Reservas</div>
+    <div class="card-body text-primary">
+      <h5 class="card-title">Lista de Reservas</h5>
+  
+      <div class="my-2 text-left">
+        <button class="btn btn-rounded btn-primary" type="button" [routerLink]="['/owners/form']">Crear Reserva</button>
+      </div>
+  
+      <div class="table-container">
+        <table class="table table-bordered table-striped">
+          <thead>
+            <tr>
+              <th>Id</th>
+              <th>Id matricula</th>
+              <th>Id parqueadero</th>
+              <th>Fecha reserva</th>
+              <th>Hora entrada</th>
+              <th>Hora salida</th>
+            </tr>
+          </thead>
+
+
+          
+          <tbody>
+            <tr *ngFor="let reserve of reserves">
+              <td>{{reserve.codigo}}</td>
+              <td>{{reserve.idMatricula}}</td>
+              <td>{{reserve.idParqueadero}}</td>
+              <td>{{reserve.fechaReserva}}</td>
+              <td>{{reserve.horaEntrada}}</td>
+              <td>{{reserve.horaSalida}}</td>
+              <td>
+                <button type="button" name="button" [routerLink]="['/clients/form', reserve.codigo]" class="btn btn-rounded btn-primary">editar</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  

@@ -1,0 +1,36 @@
+<div class="card border-primary mb-3 my-5">
+    <div class="card-header">Dueños de parqueadero</div>
+    <div class="card-body text-primary">
+      <h5 class="card-title">Lista de dueños</h5>
+  
+      <div class="my-2 text-left">
+        <button class="btn btn-rounded btn-primary" type="button" [routerLink]="['/owners/form']">Crear Dueño</button>
+      </div>
+  
+      <div class="table-container">
+        <table class="table table-bordered table-striped">
+          <thead>
+            <tr>
+              <th>id</th>
+              <th>nombre</th>
+              <th>apellido</th>
+              <th>contraseña</th>
+            </tr>
+          </thead>
+  
+          <tbody>
+            <tr *ngFor="let owner of owners">
+              <td>{{owner.codigo}}</td>
+              <td>{{owner.nombre}}</td>
+              <td>{{owner.apellido}}</td>
+              <td>{{owner.contrasena}}</td>
+              <td>
+                <button type="button" name="button" [routerLink]="['/clients/form', owner.codigo]" class="btn btn-rounded btn-primary">editar</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  
